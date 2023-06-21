@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
 
 public class TelaVisualizar implements Initializable{
 
@@ -24,6 +25,16 @@ public class TelaVisualizar implements Initializable{
 
     public TelaVisualizar(Estacionamento estacionamento){
         this.estacionamento = estacionamento;
+    }
+    
+    @FXML
+    void mostrarDetalhes(MouseEvent event) {
+        Veiculo veiculo = lvVeiculos.getSelectionModel().getSelectedItem();
+
+        if(veiculo != null){
+            taDetalhes.clear();
+            taDetalhes.appendText(veiculo.getPlaca());
+        }
     }
 
     @FXML
