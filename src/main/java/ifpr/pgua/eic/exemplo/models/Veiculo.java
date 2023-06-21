@@ -91,4 +91,8 @@ public class Veiculo {
         return false;
     }
     
+    public String toString(){
+        return placa;
+
+    }
 }
